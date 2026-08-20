@@ -1,0 +1,32 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.iml
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+
+# Test Reports
+test-output/
+screenshots/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.class
+*.jar
+*.war
+*.zip
