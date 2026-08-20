@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Clock - World Time Zones</h1>
+        
+        <div class="controls">
+            <button class="btn btn-add" onclick="addClockForm()">+ Add Time Zone</button>
+            <button class="btn btn-reset" onclick="resetToDefault()">Reset to Default</button>
+        </div>
+
+        <div class="timezone-selector">
+            <select id="timezoneSelect" onchange="quickAddTimezone()">
+                <option value="">Select a timezone to add...</option>
+                <option value="UTC">UTC (Coordinated Universal Time)</option>
+                <option value="America/New_York">New York (EST/EDT)</option>
+                <option value="America/Chicago">Chicago (CST/CDT)</option>
+                <option value="America/Denver">Denver (MST/MDT)</option>
+                <option value="America/Los_Angeles">Los Angeles (PST/PDT)</option>
+                <option value="America/Anchorage">Anchorage (AKST/AKDT)</option>
+                <option value="Pacific/Honolulu">Honolulu (HST)</option>
+                <option value="Europe/London">London (GMT/BST)</option>
+                <option value="Europe/Paris">Paris (CET/CEST)</option>
+                <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                <option value="Europe/Moscow">Moscow (MSK)</option>
+                <option value="Asia/Dubai">Dubai (GST)</option>
+                <option value="Asia/Kolkata">India (IST)</option>
+                <option value="Asia/Bangkok">Bangkok (ICT)</option>
+                <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                <option value="Asia/Tokyo">Tokyo (JST)</option>
+                <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                <option value="Pacific/Auckland">Auckland (NZDT/NZST)</option>
+                <option value="America/Toronto">Toronto (EST/EDT)</option>
+                <option value="America/Mexico_City">Mexico City (CST/CDT)</option>
+                <option value="America/Sao_Paulo">São Paulo (BRT/BRST)</option>
+                <option value="Africa/Cairo">Cairo (EET)</option>
+                <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
+                <option value="Asia/Singapore">Singapore (SGT)</option>
+            </select>
+        </div>
+
+        <div class="clocks-container" id="clocksContainer">
+            <!-- Clocks will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Modal for adding custom timezone -->
+    <div id="addClockModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddClockForm()">&times;</span>
+            <h2>Add New Time Zone</h2>
+            <form onsubmit="submitAddClock(event)">
+                <div class="form-group">
+                    <label for="cityName">City Name:</label>
+                    <input type="text" id="cityName" placeholder="e.g., Tokyo, Dubai" required>
+                </div>
+                <div class="form-group">
+                    <label for="timezoneInput">Time Zone:</label>
+                    <input type="text" id="timezoneInput" placeholder="e.g., Asia/Tokyo" required>
+                </div>
+                <div class="form-group">
+                    <label for="clockColor">Clock Color:</label>
+                    <input type="color" id="clockColor" value="#4CAF50">
+                </div>
+                <button type="submit" class="btn btn-submit">Add Clock</button>
+            </form>
+            <p class="timezone-hint">Find timezone names at: <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">IANA Time Zone Database</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
